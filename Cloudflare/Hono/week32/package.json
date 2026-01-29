@@ -1,0 +1,21 @@
+{
+  "name": "week32",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "prisma generate && wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "prisma:generate": "prisma generate",
+    "postinstall": "prisma generate && node scripts/fix-prisma-client.mjs"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.3.0",
+    "@prisma/extension-accelerate": "^3.0.1",
+    "hono": "^4.11.7"
+  },
+  "devDependencies": {
+    "@types/node": "^25.1.0",
+    "prisma": "^7.3.0",
+    "wrangler": "^4.4.0"
+  }
+}
