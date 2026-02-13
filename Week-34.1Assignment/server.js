@@ -1,31 +1,21 @@
-import express from 'express'
+import express from "express";
+import dotenv from "dotenv";
+import { connectDB } from "./DbConnection.js";
+
+dotenv.config();
+
+
+await connectDB();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-// Middleware
-app.use(express.json());
-
-// Routes
-app.get("/", (req, res) => {
+app.get("/",(req,res)=>{
   res.send({
-    message: "Hello from  Server 🚀 and server is live now!!",
-  });
-});
+    message:"Server is live now"
+  })
+})
 
-app.get("/health", (req, res) => {
-  res.json({ 
-    message:"Hello this is health page!!",
-    status: "OK" });
-});
-
-app.post("/data", (req, res) => {
-  res.json({
-    received: req.body,
-  });
-});
-
-// Start Server
 app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

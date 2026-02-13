@@ -1,0 +1,6 @@
+{
+    "prisma.pinToPrisma6": false,
+    "yaml.schemas": {
+        "kubernetes://schema/v1%40service": "file:///d%3A/Devops/Week-34.1Assignment/manifest.yml"
+    }
+}
